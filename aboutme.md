@@ -1,16 +1,32 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Maja Chen
+subtitle: Do nothing by halves!
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+### 基本信息
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
+{: .box-note}
+**姓名：**陈新源<br>
 
-### My story
+{: .box-note}
+**教育经历：<br>**
+&emsp;&emsp;2014-2018-湖北文理学院-酒店管理<br>
+&emsp;&emsp;2019-2022-中国科学技术大学-软件学院<br>
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+{: .box-note}
+**实习经历：<br>**
+&emsp;&emsp;2020.08-2021.06-腾讯-QAPM项目组-后台开发<br>
+
+{: .box-error}
+**当前状态：**秋招/毕业论文
+
+{: .box-warning}
+**个人邮箱：**chxy.s@qq.com
+
+### 自我评价
+
+&emsp;&emsp;资质一般，但是有股子韧劲，不达目的誓不罢休，能够长期坚持地去做某件事。就拿搭建博客系统这个事来说，前前后后持续了一个星期之久(当然中间穿插了很多其他事情)，踩的坑我都记不清有多少了，但是这个博客还是建成了，有模有样。<br>
+&emsp;&emsp;希望未来会更好，越努力，越幸运！
+
