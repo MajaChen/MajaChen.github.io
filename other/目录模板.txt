@@ -1,0 +1,11 @@
+ |-- .bowerrc
+    |-- .jshintrc
+    |-- package.json
+    |-- app
+        |-- app.js
+        |-- server.js
+        |-- _api
+            |-- api.groups.js
+            |-- api.posts.js
+            |-- api.users.js
+            
