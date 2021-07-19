@@ -1,10 +1,10 @@
 ---
 layout: post
-title: abcdef
+title: golang context的使用
 subtitle: golang cmd package module
-cover-img: /assets/img/sea.jpg
-thumbnail-img: /assets/img/boy.jpg
-share-img: /assets/img/sea.jpg
+cover-img: /assets/img/romaniya.jpg
+thumbnail-img: /assets/img/romaniya.jpg
+share-img: /assets/img/romaniya.jpg
 tags: [env,basic,golang]
 
 ---
