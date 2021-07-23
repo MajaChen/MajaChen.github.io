@@ -28,21 +28,21 @@ type BaseContext struct {
 
 - ctx/canceller:控制业务逻辑的生命周期，她可以设定一个超时时间，在规定的超时时间之前必须完成baseHandlerList中的所有业务逻辑，否则这条数据视为处理失败，终止业务逻辑。也可以基于ctx在业务逻辑执行的过程中跨goroutines传递数据；关于golang context包的使用可以参看[这篇文章]()；
 - baseHandleList:封装了各个子业务逻辑，每个ContextHandler实例对应一个子业务逻辑，形成一条完整的handler链；
-- deferHandleList：同样封装了各个子业务逻辑，但是这里的子业务逻辑一般指的是这类操作——即无论系统发生什么故障，这些操作一定会执行，比如资源的回收操作，通过golang的defer关键字来实现，因此得名defer handler。defer handler的执行顺序是逆序，即排在最前面的defer handler最后执行；
-- Record：数据载体，是一个map[string]interface{}类型变量；
+- deferHandleList：同样封装了各个子业务逻辑，但是这里的子业务逻辑一般指的是这类操作——即无论系统发生什么故障，这些操作一定会执行，比如资源的回收操作，通过golang的defer关键字来实现，因此得名defer handler。deferHandleList中的defer handler的执行顺序是逆序，即排在最前面的defer handler最后执行；
+- Record：数据载体，是一个map[string]interface{}类型变量；每经过一个baseHandleList中的handler，Record中的数据状态都会发生相应的变化，从而实现数据加工的目的。
 - ContextHandler是一个函数变量，其原型如下
 
 ```
 type ContextHandler func(ctx c.Context) (needBreak bool, err error)
 ```
 
-她的本质是一个函数，她接受一个context实例作为入参,该实例一般是ctx或者是基于ctx通过调用context.WithCanecl创建的derived context实例。handler可以根据context的状态来决定何时结束运行，也可基于context实例在goroutines之间传递数据，详细情况可参看[我的相关博客]()。她返回一个bool值——needBreak ，表示这个子逻辑的处理是否发生异常，如果发生异常则需要中断整条子逻辑链，整个处理逻辑结束。
+她的本质是一个函数，她接受一个context实例作为入参,该实例一般是BaseContext.ctx或者是基于BaseContext.ctx通过调用context.WithCanecl创建的derived context实例。handler可以根据context的状态来决定何时结束运行，也可基于context实例在goroutines之间传递数据，详细情况可参看我写的[context相关博客]()。她返回一个bool值——needBreak ，表示这个子逻辑的处理是否发生异常，如果发生异常则需要中断整条子逻辑链，整个处理逻辑结束。
 
 其主要的方法如下：
 
 - AddBaseHandler/AddDeferHandler：把handler加入到basehandlerlist或者deferHandlerList;
 
-- Run:在一个for循环中按baseHandleList规定的顺序运行所有的base handler，并通过defer关键字设置函数在返回的时候执行所有的defer hander。任何handler在执行的过程中返回needbreak则退出函数，处理逻辑结束。如果ctx设定的超时时间到函数也会return，处理逻辑结束。
+- Run:在一个for循环中按baseHandleList规定的顺序运行所有的base handler，并通过defer关键字设置函数在返回的时候执行所有的defer hander。任何handler在执行的过程中返回needbreak则退出函数，处理逻辑结束,BaseContext实例中的数据将处于一种中间状态。如果ctx设定的超时时间到函数也会return，处理逻辑结束。如果baseHandleList中的handler链执行完毕，则BaseContext实例中的数据已经被加工完成，可以被输送到下游模块。**这就类似于在一条流水线上加工一件产品，如果哪个加工环节出现质量纰漏，这将是一件不合格的产品，需要从流水线上清退出去；如果顺利地完成了流水线的所有加工环节，标志着一件成品已经诞生，可以被输送到下一条流水线。所以整套数据处理框架的设计架构非常优美。**
 
   ![image-20210713135138167](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20210713135138167.png)
 
