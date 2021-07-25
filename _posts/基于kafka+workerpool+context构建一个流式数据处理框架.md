@@ -36,7 +36,7 @@ type BaseContext struct {
 type ContextHandler func(ctx c.Context) (needBreak bool, err error)
 ```
 
-她的本质是一个函数，她接受一个context实例作为入参,该实例一般是BaseContext.ctx或者是基于BaseContext.ctx通过调用context.WithCanecl创建的derived context实例。handler可以根据context的状态来决定何时结束运行，也可基于context实例在goroutines之间传递数据，详细情况可参看我写的[context相关博客]()。她返回一个bool值——needBreak ，表示这个子逻辑的处理是否发生异常，如果发生异常则需要中断整条子逻辑链，整个处理逻辑结束。
+她的本质是一个函数，她接受一个context实例作为入参,该实例一般是BaseContext.ctx或者是基于BaseContext.ctx通过调用context.WithCanecl/context.WithDeadline创建的derived context实例。handler可以根据context的状态来决定何时结束运行，也可基于context实例在goroutines之间传递数据，详细情况可参看我写的[context相关博客]()。她返回一个bool值——needBreak ，表示这个子逻辑的处理是否发生异常，如果发生异常则需要中断整条子逻辑链，整个处理逻辑结束。
 
 其主要的方法如下：
 

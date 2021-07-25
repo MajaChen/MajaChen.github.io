@@ -17,10 +17,11 @@ tags: [env,basic,golang]
 
 ![image-20210712214037603](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20210712214037603.png)
 
-&emsp;&emsp;context可以在不同的goroutine之间传递数据，而这些goroutines都带有同一个“标签”（即处理同一个request），属于同一个集合，而且context可以向承载业务逻辑的goroutine发送signal，控制goroutine的生命周期。比如，如果用户为它的请求设置超时时间，那么当超时时间已到，context可以向goroutine发送信号，通知她时间已到，应该立即结束业务逻辑，退出运行。<br>
+&emsp;&emsp;context可以在不同的goroutine之间传递数据，而这些goroutines都带有同一个“标签”（即处理同一个request），属于同一个集合，而且context可以向承载业务逻辑的goroutine发送“信号”，控制goroutine的生命周期，但是这里并不涉及到显示的信号发送和接受，具体实现见后文。比如，如果用户为它的请求设置超时时间，那么当超时时间已到，context可以向goroutine发送“信号”，通知她时间已到，应该立即结束业务逻辑，退出运行。<br>
 &emsp;&emsp;所以context的两大功能我总结如下：<br>
+
 - 1.跨goroutines传递数据；
-- 2.控制goroutined的生命周期；
+- 2.控制goroutines的生命周期；
 
 ## 2.context的数据结构及其与业务逻辑的交互
 
@@ -35,16 +36,16 @@ type Context interface {
 }
 ```
 
-- Done:返回一个channel，后文这个channel被称为done channel,该channel标识该context的状态，即如果该context“被销毁”，则channel关闭，否则对该channel的侦听将被阻塞。
+- Done:返回一个channel，后文这个channel被称为done channel,如果该context“被销毁”，则该channel关闭，对该channel的侦听将立即返回，否则对该channel的侦听将一直被阻塞。
 
 - Err:返回导致context被销毁的错误信息；
 
-- Deadline:返回context还有多长时间被销毁；
+- Deadline:返回context最长还有多久被销毁；
 
 - Value:context的数据体，**key必须支持相等操作，value必须保证线程安全；**
 
 
-&emsp;&emsp;一般把context作为函数的传参，在函数执行的过程中，不断侦听done channel，如果侦听到done channel已经被关闭了,那么这就是一个信号，这个函数应该立即终止业务逻辑，结束运行。再者，通过Deadline信息函数可以得知：本函数还有多长的运行时间，函数应该在now+deadline之前结束运行，函数可以选择继续运行，也可以选择在deadline规定的时间范围内做好收尾工作，比如，及时关闭、归还资源等。
+&emsp;&emsp;一般把context作为函数的传参嵌套进业务逻辑，在函数执行的过程中，不断侦听done channel，如果侦听到done channel已经被关闭了,那么这就是一个**信号**，这个函数应该立即终止业务逻辑，结束运行。再者，通过Deadline返回的时间，函数可以得知：本函数还有多长的运行时间，函数应该在deadline之前结束运行，函数可以选择继续运行，也可以选择在deadline规定的时间范围内做好收尾工作，比如，及时关闭、归还资源等。
 
 ## 3.基于derived context构建多层级业务处理逻辑
 
@@ -65,7 +66,7 @@ WithTimeout:多了一个超时时间做入参，在WithCancel的基础上，对�
 
 ![image-20210712214637535](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20210712214637535.png)
 
-&emsp;&emsp;其中最顶层的Background,是整个系统中所有其他context的“母亲”，她永远不会被cancel,也永远不会超时。第二层的context是由Background直接创建的，控制的是最顶层的对reqeust的处理逻辑,当request处理完毕，或者处理request发生超时，这一层级的context会被销毁，连带她创建的子context；如果把一个对request的处理任务进行分解，就得到第三层的context，它们控制的是处理子任务的业务逻辑，这一层级的context被销毁有很多原因，比如：父context被销毁，父context出于业务需要显示地调用了cancel方法等。
+&emsp;&emsp;其中最顶层的Background,是整个系统中所有其他context的“母亲”，她永远不会被cancel,也永远不会超时。第二层的context是由Background直接创建的，控制的是最顶层的reqeust处理逻辑,当request处理完毕，或者处理request发生超时，这一层级的context会被销毁，连带她创建的子context；如果把一个对request的处理任务进行分解，就得到第三层的context，它们控制的是处理子任务的业务逻辑，这一层级的context被销毁有很多原因，比如：父context被销毁，父context出于业务需要显示地调用了cancel方法等。
 
 ## 4.举例——并列争球
 
@@ -136,6 +137,8 @@ func main() {
 ![image-20210712215233641](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20210712215233641.png)
 
 
+
+&emsp;&emsp;context是一个简洁而功能强大的组件，这种使用模型只是我总结的其中一种，事实上，context可以非常灵活地与我们的业务逻辑相结合，帮助我们解决复杂业务问题。
 
 ## 拓展
 
