@@ -3,7 +3,7 @@ layout: post
 title: 基于vscode 和linux构建golang 开发环境
 subtitle: golang vscode linux
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
+thumbnail-img: /assets/img/animal/LoepaOberthuri.jpg
 share-img: /assets/img/path.jpg
 tags: [tool,env]
 
