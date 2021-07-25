@@ -1,14 +1,13 @@
 ---
 layout: page
 title: Maja Chen
-subtitle: Do nothing by halves!
+subtitle: 回首向来萧瑟处，归去，也无风雨也无晴。
 ---
 
 ### 基本信息
 
-
 {: .box-note}
-**姓名：**陈新源<br>
+**姓名：**盛夏晚晴天<br>
 
 {: .box-note}
 **教育经历：<br>**
@@ -20,7 +19,7 @@ subtitle: Do nothing by halves!
 &emsp;&emsp;2020.08-2021.06-腾讯-QAPM项目组-后台开发<br>
 
 {: .box-error}
-**当前状态：**秋招/毕业论文
+**当前状态：**毕业论文/秋招
 
 {: .box-warning}
 **个人邮箱：**chxy.s@qq.com

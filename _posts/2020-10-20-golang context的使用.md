@@ -3,7 +3,7 @@ layout: post
 title: golang context的使用
 subtitle: golang cmd package module
 cover-img: /assets/img/romaniya.jpg
-thumbnail-img: /assets/img/animal/TawnyFrogmouth.jpg
+thumbnail-img: /assets/img/animals/TawnyFrogmouth.jpg
 share-img: /assets/img/romaniya.jpg
 tags: [env,basic,golang]
 
