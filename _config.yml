@@ -196,7 +196,7 @@ timezone: "Asia/Shanghai"
 #markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 100
+paginate: 5
 
 kramdown:
   input: GFM
