@@ -16,7 +16,10 @@ author: Maja Chen
 navbar-links:
   关于作者: "aboutme"
   相关资源:
-    - Gibhub: "https://github.com/MajaChen"
+    - MyGibhub: "https://github.com/MajaChen"
+    - Meituan: "https://tech.meituan.com/archives"
+    - Thoughtworks: "https://insights.thoughtworks.cn/"
+    
   博客首页: "https://majachen.github.io/"
 
 # --- Logo --- #
