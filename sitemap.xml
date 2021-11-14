@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://majachen.link/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://majachen.link/aboutme/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2021-06-30-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/tags/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-10-20-golang-context%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-10-12-golang%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%89%E5%89%91%E5%AE%A2/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-10-10-%E5%9F%BA%E4%BA%8Evscode-%E5%92%8Clinux%E6%9E%84%E5%BB%BAgolang-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-10-05-%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8Cgolang%E7%A8%8B%E5%BA%8F/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-09-25-%E8%B5%B0%E8%BF%91Kafka/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-09-23-%E9%AB%98%E6%80%A7%E8%83%BDKafka/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/2020-07-25-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+  <lastmod>2021-11-14T08:46:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://majachen.link/resources/htmls/blogs/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%93%E9%A1%B9/window%E7%B3%BB%E7%BB%9F%E4%B8%8B%EF%BC%8C%E4%BD%BF%E7%94%A8Git%E8%BF%9B%E8%A1%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%92%8C%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%20-%20%E5%8D%8E%E4%B8%BA%E4%BA%91.html</loc>
+  <lastmod>2021-07-23T01:26:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://majachen.link/resources/htmls/blogs/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%93%E9%A1%B9/Typora%20%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%20-%20%E5%B0%91%E6%95%B0%E6%B4%BE.html</loc>
+  <lastmod>2021-07-23T01:26:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://majachen.link/resources/htmls/blogs/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%93%E9%A1%B9/PicGo%20+%20Gitee(%E7%A0%81%E4%BA%91)%E5%AE%9E%E7%8E%B0markdown%E5%9B%BE%E5%BA%8A%20-%20%E7%9F%A5%E4%B9%8E.html</loc>
+  <lastmod>2021-07-23T01:26:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://majachen.link/resources/htmls/blogs/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E4%B8%93%E9%A1%B9/Typora%20%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3%20-%20%E5%B0%91%E6%95%B0%E6%B4%BE_files/saved_resource.html</loc>
+  <lastmod>2021-07-23T01:26:48+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
