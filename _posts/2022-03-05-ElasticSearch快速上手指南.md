@@ -300,7 +300,9 @@ GET index_name/_search?pretty
 
 **精准匹配**
 
-<img src="C:\Users\chxy\AppData\Roaming\Typora\typora-user-images\image-20220305112723205.png" alt="image-20220305112723205" style="zoom:50%;" />
+<img src="https://gitee.com/xinyuanchen/image_collection/raw/master/image-20220305170047261.png" alt="image-20220305170047261" style="zoom:50%;" />
+
+
 
 
 
