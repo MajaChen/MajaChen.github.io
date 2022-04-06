@@ -2,7 +2,7 @@
 layout: post
 title: skywalking微内核架构设计
 subtitle: skywalking 微内核 架构设计
-cover-img: /assets/img/18.jpg
+cover-img: /assets/img/18.png
 thumbnail-img: /assets/img/animals/TawnyFrogmouth.jpg
 tags: [skywalking,架构设计]
 ---
@@ -18,7 +18,7 @@ tags: [skywalking,架构设计]
 
 &emsp;&emsp;详情可以参看[这篇文章](https://juejin.cn/post/6844903605695152142#heading-3)。我们定义了一个接口，这个接口有多种具体实现，我们希望能够在运行时通过配置文件来决定哪种实现应该被载入（对应class字节码）。提供这种支持的技术就是Java SPI。
 
-![image-20220405134118593](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20220405134118593.png)
+![img](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20220405134118593.png)
 
 ### 程序实例
 
@@ -224,7 +224,7 @@ public void init(
 
 &emsp;&emsp;实际上，skywalking除了基于SPI来控制哪些模块应该被加载，还引入了application.yml文件来进行作进一步筛选：
 
-![image-20220405144518239](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20220405144518239.png)
+![img](https://gitee.com/xinyuanchen/image_collection/raw/master/image-20220405144518239.png)
 
 &emsp;&emsp;其中cluster、core、storage都是模块名。moduleNames就是是从application.yml中提取出的模块名列表。
 
