@@ -14,7 +14,7 @@ tags: [es]
 ## 添加、更新、删除文档
 
 ```json
-PUT /index_name/employee/1
+PUT /index_name/[type_name]/_doc/[id]
 {
     "first_name" : "John",
     "last_name" :  "Smith",
@@ -33,7 +33,7 @@ PUT /index_name/employee/1
 &emsp;&emsp;检索单个文档，指定id
 
 ```json
-GET /index_name/employee/1?pretty
+GET /index_name/employee/[type_name]/[id]?pretty
 ```
 
 &emsp;&emsp;检索单个文档，指定筛选条件
